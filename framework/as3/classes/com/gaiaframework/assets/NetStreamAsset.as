@@ -228,6 +228,10 @@ package com.gaiaframework.assets
 		{
 			_ns.pause();
 		}
+		public function togglePause():void
+		{
+			_ns.togglePause();
+		}
 		public function play(start:Number = -2, len:Number = -1):void
 		{
 			_ns.play(src, start, len);

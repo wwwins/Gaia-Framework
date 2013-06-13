@@ -30,7 +30,6 @@ package com.gaiaframework.core
 		
 		public function GaiaImpl()
 		{
-			GaiaDebug.log("Gaia Framework (AS3) v3.3.0");
 		}
 		public static function birth():IGaia
 		{
@@ -334,7 +333,10 @@ package com.gaiaframework.core
 			var before:String = value.substring(0, start);
 			var after:String = value.substr(end + 1);
 			// if expression contains flashvars syntax, look in flashvars
-			if (expression.charAt(0) == "@") return resolveBinding(before + GaiaMain.instance.stage.loaderInfo.parameters[expression.substr(1)] + after);
+			if (expression.charAt(0) == "@") {
+				var param:String = (GaiaMain.instance.stage.loaderInfo.parameters[expression.substr(1)]==undefined ? '' : GaiaMain.instance.stage.loaderInfo.parameters[expression.substr(1)]);
+				return resolveBinding(before + param + after);
+			}
 			// if expression does not contain a branch, look in main
 			if (expression.indexOf(".") == -1 && expression.indexOf("/") == -1) return resolveBinding(before + GaiaMain.instance[expression] + after);
 			// if expression contains a branch, look in that page

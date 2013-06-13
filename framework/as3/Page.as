@@ -12,7 +12,6 @@
 		public function CLASSNAME()
 		{
 			super();%ALPHA%
-			new Scaffold(this);
 		}
 		override public function transitionIn():void 
 		{

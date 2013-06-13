@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site title="Campaign Site: %PAGE%" preloader="{@base}preload.swf" menu="false">
+    <page id="index" src="{@base}index.swf">
+		<asset id="config" src="xml/config.js" type="json"/>
+        <page id="nav" src="{@base}nav.swf" depth="top">
+            <page id="home" title="Home" src="{@base}home.swf" menu="true" />
+        </page>
+    </page>
+</site>
